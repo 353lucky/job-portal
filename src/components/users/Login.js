@@ -34,6 +34,8 @@ const LoginSubmit = async (e) => {
     const {data} = await axios.post('http://localhost:1337/api/auth/local', {
             identifier : username ,password : password
     },{withCredentials: true});
+    
+
 
     setUserdetails(data.user)
     setToken(data.jwt)
