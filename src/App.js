@@ -8,6 +8,7 @@ import Employer from './components/employer/Employer';
 import Footer from './components/footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {TProvider} from './Context'
+import Jobs from './components/jobs/Jobs';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <Route path="/login" element={<Login/>}></Route>
     <Route path="/jobseeker" element={<JobSeeker/>}></Route>
     <Route path="/employer" element={<Employer/>}></Route>
+    <Route path="/jobs" element={<Jobs/>}></Route>
     </Routes>
     </TProvider>
     </>

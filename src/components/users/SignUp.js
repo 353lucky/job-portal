@@ -1,11 +1,11 @@
 import React from 'react'
 import "./SignUp.css"
-import { useRef } from "react";
+// import { useRef } from "react";
 import { Link} from "react-router-dom";
 // import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 // import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+// import Row from 'react-bootstrap/Row';
 import {useState} from "react";
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
@@ -17,9 +17,9 @@ function SignUp() {
     const[email,setEmail] = useState("");
     const[password,setPassword]=useState("");
     const[empType,setEmpType] = useState("");
-    const [error , setError] = useState("Signup Successful"); 
+    const [error , setError] = useState(""); 
     const navigate = useNavigate();
-    const[direct,setDirect] = useState(false)
+    // const[direct,setDirect] = useState(false)
 
 
 
@@ -63,7 +63,7 @@ function SignUp() {
         // if (LoginSubmit()){
         //     alert("User Alreaddy Exists")
         // }
-            axios.post('http://localhost:1337/api/auth/local/register',{
+            axios.post('auth/local/register',{
                 username :username,
                 email:email,
                 password: password,
