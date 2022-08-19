@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/home/Home';
+import SignUp from './components/users/SignUp';
+import Login from './components/users/Login';
+import Navbar from './components/Navbar';
+import JobSeeker from './components/jobSeeker/JobSeeker';
+import Employer from './components/employer/Employer';
+import Footer from './components/footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {TProvider} from './Context'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <TProvider>
+    <Navbar/>
+    {/* <Footer/> */}
+    {/* <Home/> */}
+    <Routes>
+    <Route exact path="/" element={<Home/>}></Route>
+    <Route path="/signup" element={<SignUp/>}></Route>
+    <Route path="/login" element={<Login/>}></Route>
+    <Route path="/jobseeker" element={<JobSeeker/>}></Route>
+    <Route path="/employer" element={<Employer/>}></Route>
+    </Routes>
+    </TProvider>
+    </>
   );
 }
 
